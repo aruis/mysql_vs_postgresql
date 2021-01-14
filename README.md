@@ -1,9 +1,9 @@
-#mysql9.0.22 vs postgresql13.1
+# MySQL 8.0.22 vs PostgreSQL 13.1
 
-#### mysql 配置文件[my.cnf](https://github.com/aruis/mysql_vs_postgresql/blob/main/my.cnf)
-#### postgresql 配置文件[postgres.conf](https://github.com/aruis/mysql_vs_postgresql/blob/main/postgresql.conf)
+mysql 配置文件[my.cnf](https://github.com/aruis/mysql_vs_postgresql/blob/main/my.cnf)
+postgresql 配置文件[postgres.conf](https://github.com/aruis/mysql_vs_postgresql/blob/main/postgresql.conf)
 
-#### 机器：Macbook Air M1 16G+512G
+机器：Macbook Air M1 16G+512G
 
 #### 建表语句
 
