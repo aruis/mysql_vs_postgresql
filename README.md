@@ -60,4 +60,14 @@ create table log_access
 );
 ```
 
+### 数据示例
+
+| id | v\_method | v\_uri | v\_ip | i\_status | v\_type | v\_browser | b\_success | v\_application | v\_data\_id | v\_alias\_at\_app\_module | v\_alias\_at\_app\_module\_function | b\_skip | id\_at\_auth\_user | t\_create | v\_body | id\_at\_app\_module | v\_device |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| bba5ef6a\_76cf\_4811\_a5dd\_182ceaf51a15 | GET | /api/platform/dictcategory/view/CARRIER\_UNIT/children/app\_dict | 0:0:0:0:0:0:0:1 | 200 | 06 | Chrome 8 | true | platform | CARRIER\_UNIT | dictcategory | view | true | b66f83d8\_e87c\_4fe9\_bec6\_357bd2e998bd | 2020-12-02 16:10:56.629945 | NULL | 179b0a11\_94c9\_41bb\_a788\_79a99f6096e7 | PC |
+| 648a04ca\_8e13\_4c63\_9fea\_8fa69308217c | GET | /api/szda/lendMnt/lendView | 0:0:0:0:0:0:0:1 | 200 | 06 | Chrome 8 | true | szda | NULL | lendMnt | lendView | true | b66f83d8\_e87c\_4fe9\_bec6\_357bd2e998bd | 2020-12-02 16:11:00.161490 | NULL | 53a8e8ee\_98ee\_4e32\_8425\_4042891d5b20 | PC |
+| d7fb3d8a\_da8d\_4699\_8c54\_e2a37329a128 | GET | /api/szda/digitalArchive/detailView | 0:0:0:0:0:0:0:1 | 200 | 06 | Chrome 8 | true | szda | NULL | digitalArchive | detailView | true | b66f83d8\_e87c\_4fe9\_bec6\_357bd2e998bd | 2020-12-02 16:12:28.795853 | NULL | 457338e5\_abe8\_44fd\_aa78\_01f789e47289 | PC |
+| 285077fc\_0c4d\_43bf\_bf91\_51dd4fb60bb9 | GET | /api/msg/app/inBox/b66f83d8\_e87c\_4fe9\_bec6\_357bd2e998bd | 0:0:0:0:0:0:0:1 | 200 | 06 | Chrome 8 | true | msg | b66f83d8\_e87c\_4fe9\_bec6\_357bd2e998bd | app | inBox | true | b66f83d8\_e87c\_4fe9\_bec6\_357bd2e998bd | 2020-12-02 16:13:26.954893 | NULL | NULL | PC |
+| 483e8486\_c340\_40f6\_bc87\_5ea7afa302aa | GET | /api/platform/dictcategory/view/SECRET\_LEVEL/children/app\_dict | 0:0:0:0:0:0:0:1 | 200 | 06 | Chrome 8 | true | platform | SECRET\_LEVEL | dictcategory | view | true | b66f83d8\_e87c\_4fe9\_bec6\_357bd2e998bd | 2020-12-02 16:13:27.138294 | NULL | 179b0a11\_94c9\_41bb\_a788\_79a99f6096e7 | PC |
+
 
