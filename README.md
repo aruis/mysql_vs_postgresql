@@ -12,9 +12,7 @@ postgresql 配置文件[postgres.conf](https://github.com/aruis/mysql_vs_postgre
 ```sql
 create table log_access
 (
-    id                             varchar(40) default (uuid()) not null,
-    constraint log_access_pk
-        primary key (id),
+    id                             varchar(40) default (uuid()) not null primary key,
     v_method                       varchar(10),
     v_uri                          varchar(200),
     v_ip                           varchar(15),
@@ -40,26 +38,24 @@ create table log_access
 ```sql
 create table log_access
 (
-    id varchar default gen_random_uuid() not null
-        constraint log_access_pk
-            primary key,
-    v_method varchar,
-    v_uri varchar,
-    v_ip varchar,
-    i_status integer,
-    v_type varchar,
-    v_browser varchar,
-    b_success boolean,
-    v_application varchar,
-    v_data_id varchar,
-    v_alias_at_app_module varchar,
+    id                             varchar default gen_random_uuid() not null primary key,
+    v_method                       varchar,
+    v_uri                          varchar,
+    v_ip                           varchar,
+    i_status                       integer,
+    v_type                         varchar,
+    v_browser                      varchar,
+    b_success                      boolean,
+    v_application                  varchar,
+    v_data_id                      varchar,
+    v_alias_at_app_module          varchar,
     v_alias_at_app_module_function varchar,
-    b_skip boolean,
-    id_at_auth_user varchar,
-    t_create timestamp,
-    v_body varchar,
-    id_at_app_module varchar,
-    v_device varchar
+    b_skip                         boolean,
+    id_at_auth_user                varchar,
+    t_create                       timestamp,
+    v_body                         varchar,
+    id_at_app_module               varchar,
+    v_device                       varchar
 );
 ```
 
