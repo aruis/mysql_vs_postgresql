@@ -71,3 +71,64 @@ create table log_access
 | 483e8486\_c340\_40f6\_bc87\_5ea7afa302aa | GET | /api/platform/dictcategory/view/SECRET\_LEVEL/children/app\_dict | 0:0:0:0:0:0:0:1 | 200 | 06 | Chrome 8 | true | platform | SECRET\_LEVEL | dictcategory | view | true | b66f83d8\_e87c\_4fe9\_bec6\_357bd2e998bd | 2020-12-02 16:13:27.138294 | NULL | 179b0a11\_94c9\_41bb\_a788\_79a99f6096e7 | PC |
 
 
+### 测试结果
+
+1. 仅主键存在情况下，count(*)全表
+
+    ```sql
+    select count(*) from log_access;
+    # 返回结果为128000000
+    ```
+    
+    |            | 时间    |
+    |------------|-------|
+    | MySQL      | 02:42 |   
+    | PostgreSQL | 01:37 |   
+    
+2. 对`v_method`创建索引时间
+ 
+    ```
+    create index log_access_v_method_index  on log_access (v_method);
+    ```
+
+
+    |            | 时间    | 索引大小    |
+    |------------|-------|-------|
+    | MySQL      | 10:44 | 6722MB |
+    | PostgreSQL | 00:58 | 846MB |
+    
+3. 有`v_method`索引后，count(*)全表
+
+    ```sql
+    select count(*) from log_access;
+    # 返回结果为128000000
+    ```
+    
+    |            | 时间    |
+    |------------|-------|
+    | MySQL      | 02:41 |   
+    | PostgreSQL | 00:01.507 |   
+    
+4. 有`v_method`索引后，对`v_method`加条件，再count(*)
+
+    ```sql
+    select count(*) from log_access where v_method = 'GET';
+    # 返回结果为113032192
+    ```
+    
+    |            | 时间    |
+    |------------|-------|
+    | MySQL      | 19.72s |   
+    | PostgreSQL | 1.39s |   
+    
+    ```sql
+    select count(*) from log_access where v_method != 'GET';
+    # 返回结果为14964736
+    ```
+    
+    |            | 时间    |
+    |------------|-------|
+    | MySQL      | 2.49s |   
+    | PostgreSQL | 1.8s |   
+    
+    
