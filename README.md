@@ -135,4 +135,72 @@ create table log_access
     | MySQL      | 2.49s |   
     | PostgreSQL | 1.8s |   
     
+    ```sql
+    select count(*) from log_access where v_method not in ('GET', 'PUT');
+    # 返回结果为14948608
+    ```
+    
+    |            | 时间    |
+    |------------|-------|
+    | MySQL      | 3.52s |   
+    | PostgreSQL | 2.6s |   
+    
+    ```sql
+    select * from log_access where v_method is null;
+    ```
+    
+    |            | 时间    |
+    |------------|-------|
+    | MySQL      | 0.9s |   
+    | PostgreSQL | 0.19s |  
+    
+5. 创建组合索引
+
+    ```sql
+    create index log_access_v_method_i_status_v_device_index
+        on log_access (v_method, i_status, v_device);
+    ```
+    
+    |            | 时间    |
+    |------------|-------|
+    | MySQL      | 13:24 |   
+    | PostgreSQL | 02:26 |
+    
+5. 对组合索引的使用
+
+    ```sql
+    select *
+    from log_access
+    where v_method = 'POST'
+      and i_status = 516
+      and v_device = 'Android';
+    ```
+    
+    |            | 时间    |
+    |------------|-------|
+    | MySQL      | 0.763s |   
+    | PostgreSQL | 0.164s |  
+    
+    ```sql
+    select *
+    from log_access
+    where i_status = 516
+      and v_device = 'Android';';
+    ```
+    
+    |            | 时间    |
+    |------------|-------|
+    | MySQL      | 385.9s |   
+    | PostgreSQL | 1.0s |  
+ 
+    ```sql
+    select v_device, count(*)
+    from log_access
+    group by v_device;
+    ```
+    
+    |            | 时间    |
+    |------------|-------|
+    | MySQL      | 45s |   
+    | PostgreSQL | 5s |  
     
