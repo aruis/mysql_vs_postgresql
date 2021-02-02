@@ -185,7 +185,7 @@ create table log_access
     select *
     from log_access
     where i_status = 516
-      and v_device = 'Android';';
+      and v_device = 'Android';
     ```
     
     |            | 时间    |
