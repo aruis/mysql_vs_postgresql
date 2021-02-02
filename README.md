@@ -1,5 +1,9 @@
 # MySQL 8.0.22 vs PostgreSQL 13.1
 
+对比视频1：https://www.bilibili.com/video/BV1sU4y14741/ 
+
+对比视频2：https://www.bilibili.com/video/BV1mf4y1k7mb/
+
 MySQL 配置文件[my.cnf](https://github.com/aruis/mysql_vs_postgresql/blob/main/my.cnf)
 
 PostgreSQL 配置文件[postgres.conf](https://github.com/aruis/mysql_vs_postgresql/blob/main/postgresql.conf)
